@@ -1,0 +1,7 @@
+com/aivavic/domain1/models/Ingredient.class
+com/aivavic/domain1/repository/IngredientRepository.class
+com/aivavic/domain1/service/IngredientService.class
+com/aivavic/domain1/exceptions/IngredientNotFoundException.class
+com/aivavic/domain1/resources/IngredientResource.class
+com/aivavic/domain1/vo/IngredientRequest.class
+com/aivavic/App.class

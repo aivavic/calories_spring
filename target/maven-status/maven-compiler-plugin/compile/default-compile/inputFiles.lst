@@ -1,0 +1,7 @@
+/home/afanasievv/IdeaProjects/calories/src/main/java/com/aivavic/domain1/exceptions/IngredientNotFoundException.java
+/home/afanasievv/IdeaProjects/calories/src/main/java/com/aivavic/domain1/vo/IngredientRequest.java
+/home/afanasievv/IdeaProjects/calories/src/main/java/com/aivavic/domain1/service/IngredientService.java
+/home/afanasievv/IdeaProjects/calories/src/main/java/com/aivavic/domain1/repository/IngredientRepository.java
+/home/afanasievv/IdeaProjects/calories/src/main/java/com/aivavic/domain1/resources/IngredientResource.java
+/home/afanasievv/IdeaProjects/calories/src/main/java/com/aivavic/App.java
+/home/afanasievv/IdeaProjects/calories/src/main/java/com/aivavic/domain1/models/Ingredient.java
