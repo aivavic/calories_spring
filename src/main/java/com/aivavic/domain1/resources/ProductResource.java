@@ -32,6 +32,17 @@ public class ProductResource {
         return ResponseEntity.ok(this.productService.findAll());
     }
 
+    /*{
+        "ingredientCounts": [
+        {
+            "count": 200,
+                "ingredient": {
+            "id": "ff808181657810690165781408d50000"
+        }
+        }
+  ],
+        "name": "Борщ"
+    }*/
     @PostMapping
     @ApiOperation(value = "Create product", notes = "It permits to create a new product")
     public ResponseEntity<?> newProduct(@RequestBody ProductRequest request, BindingResult result) {

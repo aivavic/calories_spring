@@ -19,6 +19,7 @@ public class Product {
 
     private String name;
 
+    private float calories = 0;
 
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.EAGER)

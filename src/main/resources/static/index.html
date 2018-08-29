@@ -3,8 +3,31 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <p>Get your greeting <a href="/greeting">here</a></p>
+create ingrediennt:
+<form id="ingredient_form" action="http://localhost:8080/api/ingredient" method="post">
+    <input type="text" name="name">
+    <input type="number" name="calories">
+    <input type="number" name="carbohydrates">
+    <input type="number" name="proteins">
+    <input type="number" name="grease">
+    <input type="submit" value="send">
+</form>
+<script>
+    var form = document.getElementById("ingredient_form");
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        console.log("submit");
+        return false;
+    })
+    axios.get("http://localhost:8080/api/ingredient")
+        .then(function (response) {
+            console.log(response);
+        })
+</script>
 </body>
 </html>
