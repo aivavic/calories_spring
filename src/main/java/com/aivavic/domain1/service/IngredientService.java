@@ -11,14 +11,14 @@ import java.util.UUID;
 
 @Service
 public class IngredientService {
-    private final IngredientRepository ingredientRepository;
+    private final IngredientRepository repository;
 
-    public IngredientService(IngredientRepository ingredientRepository) {
-        this.ingredientRepository = ingredientRepository;
+    public IngredientService(IngredientRepository repository) {
+        this.repository = repository;
     }
 
     public Ingredient update(Ingredient ingredient) {
-        return this.ingredientRepository.save(ingredient);
+        return this.repository.save(ingredient);
     }
 
     public Ingredient create(IngredientRequest request){
@@ -29,24 +29,24 @@ public class IngredientService {
         ingredient.setCarbohydrates(request.getCarbohydrates());
         ingredient.setProteins(request.getProteins());
         ingredient.setGrease(request.getGrease());
-        return this.ingredientRepository.save(ingredient);
+        return this.repository.save(ingredient);
     }
 
     public void delete(String id){
-        final Optional<Ingredient> ingredient = this.ingredientRepository.findById(id);
+        final Optional<Ingredient> ingredient = this.repository.findById(id);
         if(ingredient.isPresent()){
-            this.ingredientRepository.delete(ingredient.get());
+            this.repository.delete(ingredient.get());
         } else {
             throw new IngredientNotFoundException(id);
         }
     }
 
     public Iterable<Ingredient> findAll() {
-        return this.ingredientRepository.findAll();
+        return this.repository.findAll();
     }
 
     public Ingredient findOne(String id) {
-        final Optional<Ingredient> ingredient = this.ingredientRepository.findById(id);
+        final Optional<Ingredient> ingredient = this.repository.findById(id);
         if(ingredient.isPresent()){
             return ingredient.get();
         } else {

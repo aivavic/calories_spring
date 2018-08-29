@@ -1,13 +1,16 @@
 package com.aivavic.domain1.models;
 
+import com.fasterxml.jackson.annotation.*;
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
+@Data
 @Entity
 @Table(name = "product")
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,property="@id", scope = IngredientCount.class)
 public class Product {
     @Id
     @GeneratedValue(generator = "system-uuid")
@@ -16,30 +19,9 @@ public class Product {
 
     private String name;
 
-    @ElementCollection
+
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
     Set<IngredientCount> ingredientCounts = new HashSet<>();
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Set<IngredientCount> getIngredientCounts() {
-        return ingredientCounts;
-    }
-
-    public void setIngredientCounts(Set<IngredientCount> ingredientCounts) {
-        this.ingredientCounts = ingredientCounts;
-    }
 }
